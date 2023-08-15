@@ -17,6 +17,9 @@ body{
 }
 
 
+
+
+
 /* IS */
 .container h1,
 .container h2,
@@ -40,4 +43,19 @@ body{
 
 input:is(:hover, :focus){
     outline: 3px solid rgb(120, 255, 120);
+}
+
+
+
+
+
+
+
+/* :where() takes no specificity, always 0 */
+:where(.element, #element){
+    color: aliceblue;
+}
+/* :is() takes the highest specificity inside the brackets*/
+:is(.element, #element){
+    color: aliceblue;
 }
