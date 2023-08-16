@@ -21,17 +21,17 @@ body{
 
 
 /* IS */
+/* it works if the element fulfill any condition inside the brackets */
 .container h1,
 .container h2,
 .container p,
 .container span{
-    color: rgb(255, 154, 154);
+    color: rgb(109, 109, 255);
 }
-
-
 .container :is(h1, h2, p, span){
     color: rgb(109, 109, 255);
 }
+
 
 .container :is(:hover){
     outline: 2px solid white;
@@ -42,7 +42,7 @@ body{
 }
 
 input:is(:hover, :focus){
-    outline: 3px solid rgb(120, 255, 120);
+    width: 40px;
 }
 
 
@@ -59,3 +59,36 @@ input:is(:hover, :focus){
 :is(.element, #element){
     color: aliceblue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HAS  */
+.container:has(p){
+    background-color: aquamarine;
+}
+
+/* both children to work  */
+.container:has(a):has(h5){
+    box-shadow: 10px 10px 5px rgba(203, 203, 203, 0.548);
+}
+/* any child to work  */
+.container:has(a, h6){
+    text-transform: uppercase;
+}
+
+.container:has(h5) p{
+    text-decoration: line-through;
+}
+
